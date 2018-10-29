@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = (Button) findViewById(R.id.button);
         Button btn_explain = (Button)findViewById(R.id.button2);
+        Button btn_rename = (Button) findViewById(R.id.button100);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        btn_rename.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                // インテントのインスタンス生成
+                Intent intent = new Intent(MainActivity.this, FileEdit.class);
+                // 次画面のアクティビティ起動
+                startActivity(intent);
+            }
+        });
 
 
 

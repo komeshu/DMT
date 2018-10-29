@@ -6,16 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Explain3 extends AppCompatActivity {
+public class Explain4 extends AppCompatActivity{
 
     Button button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.explain3);
+        setContentView(R.layout.explain4);
 
-        Button btn = (Button) findViewById(R.id.button5);
+        Button btn = (Button) findViewById(R.id.button6);
 
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -23,7 +23,7 @@ public class Explain3 extends AppCompatActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 // インテントのインスタンス生成
-                Intent intent = new Intent(Explain3.this, Explain4.class);
+                Intent intent = new Intent(Explain4.this, MainActivity2.class);
                 // 次画面のアクティビティ起動
                 startActivity(intent);
             }
