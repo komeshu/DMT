@@ -31,6 +31,9 @@
         <activity android:name=".Explain2" />
         <activity android:name=".Explain3" />
         <activity android:name=".Explain4" />
+        <activity android:name=".Movie" />
+        <activity android:name=".MovieReverse" />
+
     </application>
 
 </manifest>

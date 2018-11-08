@@ -15,7 +15,7 @@ import android.widget.NumberPicker;
 import android.widget.Toast;
 
 import static com.example.fukuzawa18.dmt.MainActivity2.REQUEST_CAPTURE_IMAGE;
-import static com.example.fukuzawa18.dmt.MainActivity2.getPath;
+//import static com.example.fukuzawa18.dmt.MainActivity2.getPath;
 
 public class FileEdit extends Activity {
 

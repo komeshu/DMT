@@ -4,38 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#9ed1ff">
+    android:background="#d0e1f9">
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_weight="1"
-        android:background="#00ff00"
-        android:layout_alignParentTop="true" />
+        android:background="#00ff00" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="73dp"
+        android:layout_width="327dp"
+        android:layout_height="137dp"
+        android:background="@drawable/button_background"
         android:text="録画開始"
-        android:textSize="34dp"
+        android:textSize="65dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/button8"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="424dp"
+        android:layout_height="109dp"
+        android:background="@drawable/button_background2"
         android:text="撮影した動画を再生"
-        android:textSize="34dp"
+        android:textSize="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.676" />
 </android.support.constraint.ConstraintLayout>

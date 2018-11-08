@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="344dp"
-        android:layout_height="471dp"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp" />
+    <TextureView
+        android:id="@+id/textureView2"
+        android:layout_width="346dp"
+        android:layout_height="437dp"
+        tools:layout_editor_absoluteX="22dp"
+        tools:layout_editor_absoluteY="37dp" />
 </android.support.constraint.ConstraintLayout>

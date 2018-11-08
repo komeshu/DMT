@@ -4,11 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
@@ -18,37 +22,39 @@ public class MovieReverse extends Activity implements TextureView.SurfaceTexture
     boolean isMirrored = true;
     private MediaPlayer mMediaPlayer;
     private TextureView mPreview;
+    Button button1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_reverse);
 
-        //インテントを取得
-        Intent intent = getIntent();
-        //インテントに保存されたデータを取得
-        String data_1 = intent.getStringExtra("Keyword");
-        String data_2 = intent.getStringExtra("Keyword2");
-        String message = "この動画はvideo" + data_1 + data_2 + ".mp4 です";
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
-
-/*
-        //戻るボタン
-        ImageButton btn = (ImageButton) findViewById(R.id.button01_id);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                // 次画面のアクティビティ終了
-                finish();
-            }
-        });
-*/
-
         mPreview = (TextureView) findViewById(R.id.textureView);
         mPreview.setSurfaceTextureListener(this);
         mPreview.setScaleX(isMirrored ? -1 : 1);
+
+        findViews();
+        setListeners();
+
     }
+
+
+
+    protected void findViews() {
+        button1 = (Button) findViewById(R.id.button11);
+    }
+    protected void setListeners() {
+       button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //クリック時の処理
+                Intent intent = new Intent(MovieReverse.this, MovieReverse.class);
+                 startActivity(intent);
+            }
+        });
+    }
+
+
 
 
     @Override
@@ -56,15 +62,26 @@ public class MovieReverse extends Activity implements TextureView.SurfaceTexture
 
         mMediaPlayer = new MediaPlayer();
 
-        Intent intent = getIntent();
+//        Intent intent = getIntent();
         //インテントに保存されたデータを取得
-        String data_1 = intent.getStringExtra("Keyword");
-        String data_2 = intent.getStringExtra("Keyword2");
+//        Uri videoUri = intent.getParcelableExtra("PATH");
+    //    String data_1 = intent.getStringExtra("Keyword");
+    //    String data_2 = intent.getStringExtra("Keyword2");
 
         mMediaPlayer.setSurface(new Surface(surface));
         try {
 
-            mMediaPlayer.setDataSource("/storage/emulated/0/DCIM/Camera/"+"video"+data_1+data_2+".mp4");
+         //   mMediaPlayer.setDataSource("/storage/emulated/0/DCIM/Camera/"+"video"+data_1+data_2+".mp4");
+        //    mMediaPlayer.setDataSource(videoUri);
+         //   mMediaPlayer.setDataSource("/storage/emulated/0/DCIM/Camera/video77.mp4");
+         //   String path = "/storage/emulated/0/DCIM/Camera/video77.mp4";
+
+         //   String path = getIntent().getExtras().getString("PATH");
+         //   String path = getIntent().getStringExtra("PATH");
+
+            Intent intent = getIntent();
+            String path = intent.getStringExtra("PATH");
+            mMediaPlayer.setDataSource(path);
             mMediaPlayer.prepare();
             mMediaPlayer.start();
         } catch (Exception e) {
